@@ -25,8 +25,8 @@ class ArrayDeDatos {
 
 //Get a list of all the arrays with data.
 function showDataFields() {
-    let aux = ``;
-    for (let i = 0; i < index; i++) {
+    let aux = ``; 
+    for (let i = 0; i < index+1; i++) {
         aux+=`
         <div class="row">
             <div class="alert alert-danger col 3" role="alert">
@@ -38,7 +38,8 @@ function showDataFields() {
         </div>
         `;
     }
-    myJSON.storeInLocal;
+    return aux;
+    // myJSON.storeInLocal;
 }
 
 //Agregar y quitar lineas al generador.
@@ -57,6 +58,13 @@ function removeFieldset(){
 //Get User values/filters
 
 //Creates the JSON file
+function generateJSON(){
+    console.log("comienza la magia");
+    let iteraciones = document.getElementById(`multiplier`).value;
+    for (let i = 0; i < iteraciones; i++) {
+        //Logica de armado del JSON
+    }
+}
 
 //Borra todo
 function clearForm(){
