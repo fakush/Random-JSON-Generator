@@ -1,0 +1,97 @@
+/* Importar Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Fuentes Importadas Google Fonts
+    font-family: 'Roboto', sans-serif;
+*/
+
+/* Clases Macro */
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    margin: 0px;
+    background-color: #1d1e22;
+    color: whitesmoke;
+}
+
+header{
+    padding: 25px;
+    padding-left: 10vw;
+    background-color: rgb(117, 21, 21);
+}
+
+.instructions{
+    padding-top: 10px;
+}
+
+.fieldsets {
+    border: 4px solid rgb(117, 21, 21);
+    border-radius: 10px;
+    padding: 5px;
+    row-gap: 3px;
+    .sumarYRestar{
+        width: 100%;
+        column-gap: 5px;
+        display: flex;
+        justify-content: end;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .addIndex{
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+    .arrayRowContainer{
+        border: 2px solid rgb(117, 21, 21);
+        border-radius: 5px;
+        padding: 5px;
+        .arrayRow{
+            border: 2px solid rgb(117, 21, 21);
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .arrayName{
+            border: 2px solid rgb(117, 21, 21);
+            border-radius: 5px;
+            background-color: rgb(122, 59, 59);
+            padding: 5px;
+        }
+        .arrayData{
+            border: 2px solid rgb(117, 21, 21);
+            border-radius: 5px;
+            background-color: rgb(122, 59, 59);
+            padding: 5px;
+        }
+    }    
+}
+
+.generateBar{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    .generateJSON{
+        display: flex;
+        justify-content: end;
+        column-gap: 10px;
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+        }
+    }
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0px;
+    padding-left: 15px;
+}
+
+
+
