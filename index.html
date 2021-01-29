@@ -30,6 +30,7 @@
         <div class="fieldsets">
             <div class="row sumarYRestar">
                 <button onclick="addFieldset()" class="btn btn-dark"><span class="material-icons">add_circle_outline</span></button>
+                <button onclick="generateJSON()" class="btn btn-success boton"><span class="material-icons">check_circle_outline</span> Generate</button>
                 <!-- <button onclick="removeFieldset()" class="btn btn-dark"><span class="material-icons">remove_circle_outline</span></button> -->
             </div>
             <form>
@@ -43,31 +44,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="row generateBar">
-                    <div class="col-3">
-                        <div class="addIndex">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="addIndex">
-                                <label class="form-check-label" for="defaultCheck1"><h5>Add Numeral Index</h5></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="form-group">
-                            <input type="number" class="form-control" id="multiplier" placeholder="Sample Amount">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="generateJSON">
-                            <button onclick="clearForm()" class="btn btn-danger boton"><span class="material-icons">cancel</span> Clear</button>
-                            <button onclick="generateJSON()" class="btn btn-success boton"><span class="material-icons">check_circle_outline</span> Generate</button>
+            </form>
+            <div class="row generateBar">
+                <div class="col-3">
+                    <div class="addIndex">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="addIndex">
+                            <label class="form-check-label" for="defaultCheck1"><h5>Add Numeral Index</h5></label>
                         </div>
                     </div>
                 </div>
-            </form>
+                <div class="col-3">
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="multiplier" value="10" placeholder="Sample Amount">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="generateJSON">
+                        <button onclick="clearForm()" class="btn btn-danger boton"><span class="material-icons">cancel</span> Clear</button>
+                        <button onclick="generateJSON()" class="btn btn-success boton"><span class="material-icons">check_circle_outline</span> Generate</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="fielsets">
+        <div class="arraySets">
+            <p>Fielsets</p>
             <div id="arrayDataContainer"></div>
+        </div>
+        <div class="arraySets">
+            <p>Output Array</p>
+            <div id="outputArray"></div>
+        </div>
+        <div class="arraySets">
+            <p>JSON Data</p>
+            <div id="jsonData"></div>
         </div>
     </div>
     <footer class="">
