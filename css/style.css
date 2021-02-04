@@ -8,7 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 62.5%;
   margin: 0px;
-  background-color: #1d1e22;
+  background-color: #5263a8;
   color: whitesmoke;
 }
 
@@ -27,6 +27,35 @@ header {
   border-radius: 10px;
   padding: 5px;
   row-gap: 3px;
+}
+
+.fieldsets .samples {
+  width: 100%;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.fieldsets .samples button {
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fieldsets .sumarYRestar {
@@ -61,14 +90,10 @@ header {
 }
 
 .fieldsets .arrayRowContainer {
-  border: 2px solid #751515;
-  border-radius: 5px;
   padding: 5px;
 }
 
 .fieldsets .arrayRowContainer .arrayRow {
-  border: 2px solid #751515;
-  border-radius: 5px;
   padding: 5px;
 }
 

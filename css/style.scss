@@ -9,7 +9,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
     margin: 0px;
-    background-color: #1d1e22;
+    background-color: #5263a8;
     color: whitesmoke;
 }
 
@@ -28,6 +28,22 @@ header{
     border-radius: 10px;
     padding: 5px;
     row-gap: 3px;
+    .samples{
+        width: 100%;
+        column-gap: 5px;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        row-gap: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        button{
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
     .sumarYRestar{
         width: 100%;
         column-gap: 5px;
@@ -46,12 +62,12 @@ header{
         padding-bottom: 10px;
     }
     .arrayRowContainer{
-        border: 2px solid rgb(117, 21, 21);
-        border-radius: 5px;
+        // border: 2px solid rgb(117, 21, 21);
+        // border-radius: 5px;
         padding: 5px;
         .arrayRow{
-            border: 2px solid rgb(117, 21, 21);
-            border-radius: 5px;
+            // border: 2px solid rgb(117, 21, 21);
+            // border-radius: 5px;
             padding: 5px;
         }
         .arrayName{
