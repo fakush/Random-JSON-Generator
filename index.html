@@ -14,7 +14,7 @@
     <!-- Overrides propios -->
     <link rel="stylesheet" href="css/style.css">
     <!-- JS Script-->
-    <script src="./script.js" defer></script>
+    <script src="js/index-script.js" defer></script>
 </head>
 <body>
     <header>
@@ -86,13 +86,13 @@
                 </div>
                 <div class="col-3">
                     <div class="form-group">
-                        <input type="number" class="form-control" id="multiplier" value="10" placeholder="Sample Amount">
+                        <input type="number" class="form-control" id="multiplier" value="100" placeholder="Sample Amount">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="generateJSON">
-                        <button onclick="clearForm()" class="btn btn-danger boton"><span class="material-icons">cancel</span> Clear</button>
-                        <button onclick="generateJSON()" class="btn btn-success boton"><span class="material-icons">check_circle_outline</span> Generate</button>
+                        <button onclick="clearForm()" class="btn btn-danger boton shadow-lg"><span class="material-icons">cancel</span> Clear</button>
+                        <button onclick="generateJSON()" class="btn btn-success boton shadow-lg"><span class="material-icons">check_circle_outline</span> Generate</button>
                     </div>
                 </div>
             </div>
@@ -108,6 +108,9 @@
         <div class="arraySets">
             <p>JSON Data</p>
             <div id="jsonData"></div>
+        </div>
+        <div class="export">
+            <button onclick="exportJSON()" class="btn btn-success boton shadow-lg"><span class="material-icons">check_circle_outline</span> Export JSON</button>
         </div>
     </div>
     <footer class="">
