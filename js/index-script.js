@@ -45,26 +45,29 @@ function addArray(int){
     myJSON.push(dataForArray);
     document.getElementById("arrayDataContainer").innerHTML = showDataFields();
     index++;
+    $("#generateJSON").show(); //Muestra el boton para Generar el JSON.
 }
 
 function addFieldset(){
-    let dataForArray = new ArrayDeDatos(document.getElementById(`inputKey`).value, document.getElementById(`inputValues`).value);
-    myJSON.push(dataForArray);
-    document.getElementById("arrayDataContainer").innerHTML = showDataFields();
-    index++;
+    if (document.getElementById(`inputKey`).value != "" && document.getElementById(`inputValues`).value != ""){
+        let dataForArray = new ArrayDeDatos(document.getElementById(`inputKey`).value, document.getElementById(`inputValues`).value);
+        myJSON.push(dataForArray);
+        document.getElementById("arrayDataContainer").innerHTML = showDataFields();
+        index++;
+        $("#generateJSON").show(); //Muestra el boton para Generar el JSON.
+    }
 }
 
 function removeFieldset(){ //Esto es solo para no olvidarme de implementar esta función.
     console.log("removeFieldset");
 }
 
-//Get User values/filters
-
 //Creates the JSON file
 let outputArray = []; //This array will contain all the mixed data to stringify into JSON
 
 function generateJSON(){
     if (myJSON.length > 0) {
+        $("#exportJSON").show(); //Muestra el boton para Exportar el JSON.
         let iteraciones = parseInt(document.getElementById(`multiplier`).value);
         let auxOut = ``;
         for (let i = 0; i < iteraciones; i++) {
@@ -99,14 +102,22 @@ function generateJSON(){
                                                     `;
 }
 
+// PAso todo esto a jQuery momentaneamente.
 //Borra todo
 function clearForm(){
     myJSON = [];
-    document.getElementById("arrayRowContainer").innerHTML = newFieldset;
-    document.getElementById("arrayDataContainer").innerHTML = "";
-    document.getElementById("outputArray").innerHTML = "";
-    document.getElementById("jsonData").innerHTML = "";
+    //document.getElementById("arrayRowContainer").innerHTML = newFieldset;
+    //document.getElementById("arrayDataContainer").innerHTML = "";
+    // document.getElementById("outputArray").innerHTML = "";
+    //document.getElementById("jsonData").innerHTML = "";
+    $("#arrayRowContainer").html(newFieldset);
+    $("#arrayDataContainer").html("");
+    $("#outputArray").html("");
+    $("#jsonData").html("");
+    $("#generateJSON").hide();
+    $("#exportJSON").hide();
 }
+
 
 function exportJSON(){ //Pone el JSON en memoria y pasa a otra página.
     if (outputArray.length != 0) {
@@ -119,6 +130,26 @@ function exportJSON(){ //Pone el JSON en memoria y pasa a otra página.
 //Here we go!
 window.onload = function() {
     document.getElementById("arrayRowContainer").innerHTML = newFieldset;
+    $("#generateJSON").hide(); //Oculta el boton para Generar el JSON.
+    $("#exportJSON").hide(); //Oculta el boton para Exportar el JSON.
+    $("#addFieldset").hide(); //Oculta el boton para añadir Fieldset.
+    $("#inputKey").change(function(){
+        keyStatus = true;
+        checkStatus();
+    });
+    $("#inputValues").change(function(){
+        valueStatus = true;
+        checkStatus();
+    });
+}
+
+//Evento en JQuery
+let keyStatus = false;
+let valueStatus =  false;    
+function checkStatus(){
+    if (keyStatus == true && valueStatus == true) {
+        $("#addFieldset").show(); //Muestra el boton para añadir Fieldset.
+    }
 }
 
 
