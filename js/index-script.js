@@ -69,9 +69,8 @@ function addDataButtons(){
 }
 
 //Agregar y quitar lineas al generador.
-function addArray(i){
-    let sample = myData[i];
-    console.log(myData);
+function addArray(int){
+    let sample = myData[int]; 
     let dataForArray = new ArrayDeDatos(sample.tipoSet, sample.setKey, sample.setValues);
     // console.log(sample.tipoSet);
     // console.log(sample.setKey);
