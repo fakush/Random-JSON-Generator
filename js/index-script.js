@@ -48,7 +48,7 @@ function divBoton(index){
 }
 
 function addDataButtons(){
-    $.get("/js/datos-precargados.json", function(data, status){
+    $.get("https://raw.githubusercontent.com/fakush/Random-JSON-Generator/master/js/datos-precargados.json", function(data, status){
         myData = data;
         for (let i = 0; i < myData.length; i++) {
             if(myData[i].categoriaSet == "personas"){
