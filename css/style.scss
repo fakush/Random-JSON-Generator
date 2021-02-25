@@ -24,25 +24,30 @@ header{
 }
 
 .fieldsets {
+    width: 100%;
     border: 4px solid rgb(117, 21, 21);
     border-radius: 10px;
     padding: 5px;
     row-gap: 3px;
     .samples{
-        width: 100%;
-        column-gap: 5px;
-        display: flex;
         margin: auto;
-        justify-content: center;
-        row-gap: 5px;
         margin-top: 5px;
         margin-bottom: 5px;
-        button{
+        .accordion{
+            width: 100%;
+            .card-body{
+                display: grid;
+                row-gap: 5px;
+                column-gap: 5px;
+            }
+        }
+        .boton{
             font-size: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+        
     }
     .sumarYRestar{
         width: 100%;

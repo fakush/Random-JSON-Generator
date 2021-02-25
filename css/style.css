@@ -23,6 +23,7 @@ header {
 }
 
 .fieldsets {
+  width: 100%;
   border: 4px solid #751515;
   border-radius: 10px;
   padding: 5px;
@@ -30,22 +31,24 @@ header {
 }
 
 .fieldsets .samples {
-  width: 100%;
-  -webkit-column-gap: 5px;
-          column-gap: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin: auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  row-gap: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.fieldsets .samples button {
+.fieldsets .samples .accordion {
+  width: 100%;
+}
+
+.fieldsets .samples .accordion .card-body {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 5px;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+.fieldsets .samples .boton {
   font-size: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
