@@ -72,7 +72,7 @@ function addDataButtons(){
 function addArray(int){
     console.log(int);
     let sample = myData[int];
-    console.log(myData[int]);
+    console.log(myData);
     console.log(sample);
     let dataForArray = new ArrayDeDatos(sample.tipoSet, sample.setKey, sample.setValues);
     // console.log(sample.tipoSet);
