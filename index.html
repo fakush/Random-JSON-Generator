@@ -32,7 +32,9 @@
             <h6>Para generar su JSON seleccione uno o varios de los sets de valores precargados en el orden que quiere que aparezcan.<br>
                 O añada sus propios sets personalizados utilizando Llave y Valores para cada campo.<br>
                 Use comas (,) para separar los valores utilizando comillas para cada valor, si correspondiera. <br>
-                Cuando este listo seleccione la cantidad de entradas del JSON y genere el archivo.</h6>
+                Cuando este listo seleccione la cantidad de entradas del JSON y genere el archivo. <br>
+                Toque cualquier Fielset para removerlo del JSON.
+              </h6>
         </div>
         <div class="fieldsets">
             <div class="row samples">
@@ -46,7 +48,7 @@
                         </h2>
                       </div>
                       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body" id="categoriaPersona">
+                        <div class="card-body row" id="categoriaPersona">
                         </div>
                       </div>
                     </div>
@@ -59,7 +61,7 @@
                         </h2>
                       </div>
                       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body" id="categoriaObjetos">
+                        <div class="card-body row" id="categoriaObjetos">
                         </div>
                       </div>
                     </div>
@@ -72,7 +74,7 @@
                         </h2>
                       </div>
                       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body" id="categoriaLugares">                        
+                        <div class="card-body row" id="categoriaLugares">                        
                         </div>
                       </div>
                     </div>
@@ -85,7 +87,7 @@
                           </h2>
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                          <div class="card-body" id="categoriaDatos">
+                          <div class="card-body row" id="categoriaDatos">
                           </div>
                         </div>
                       </div>
@@ -135,22 +137,22 @@
                 </div>
             </div>
         </div>
-        <div class="arraySets">
+        <div class="arraySets overflow-auto">
             <p>Fielsets</p>
             <div id="arrayDataContainer" style="display:inline-block;"></div>
         </div>
-        <div class="arraySets">
+        <!-- <div class="arraySets">
             <p>Output Array</p>
-            <div id="outputArray"></div>
+            <div id="outputArrays"></div>
         </div>
         <div class="arraySets">
             <p>JSON Data</p>
             <div id="jsonData"></div>
         </div>
         <div class="export">
-            <!-- <button onclick="exportJSON()" id="exportJSON" class="btn btn-success boton shadow-lg"><span class="material-icons">check_circle_outline</span> Export JSON</button> -->
+            <!-- <button onclick="exportJSON()" id="exportJSON" class="btn btn-success boton shadow-lg"><span class="material-icons">check_circle_outline</span> Export JSON</button> --
             <button onclick="exportJSON()" id="exportJSON" class="btn btn-success boton shadow-lg"><span class="material-icons">check_circle_outline</span> Exportar JSON</button>
-        </div>
+        </div> -->
     </div>
     <footer class="">
         <p>By Fakush.</p>

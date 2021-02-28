@@ -24,21 +24,24 @@ header{
 }
 
 .fieldsets {
-    width: 100%;
     border: 4px solid rgb(117, 21, 21);
     border-radius: 10px;
     padding: 5px;
     row-gap: 3px;
+
     .samples{
         margin: auto;
         margin-top: 5px;
         margin-bottom: 5px;
+
         .accordion{
             width: 100%;
+
             .card-body{
-                display: grid;
+                display: flex;
                 row-gap: 5px;
                 column-gap: 5px;
+                justify-content: center;
             }
         }
         .boton{
@@ -113,6 +116,7 @@ header{
     border-radius: 10px;
     padding: 5px;
     row-gap: 3px;
+    max-height: 300px;
     
     #arrayDataContainer{
         width: 100%;

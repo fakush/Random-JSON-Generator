@@ -1,7 +1,6 @@
-//Random DB Generator
+//Random JSON Generator
 
 //Variables globales
-let index = 0;
 let newFieldset = `
                     <div class="row">
                         <div class="form-group col-3">
@@ -25,13 +24,13 @@ class ArrayDeDatos {
 //Get a list of all the arrays with data.
 function showDataFields() {
     let aux = ``; 
-    for (let i = 0; i < index+1; i++) {
+    for (let i = 0; i < myJSON.length; i++) {
         // let valuesString = JSON.stringify(myJSON[i].values);
         // let newString = valuesString.replace(",", ", ");
         aux+=`
-            <div class="alert alert-danger" style="display:inline-block;" role="alert">
-                ${myJSON[i].key}: ${myJSON[i].values}
-            </div>
+            <button onclick="removeFieldset(${i})" class="alert alert-danger shadow" style="display:inline-block;" role="alert">
+            <span class="material-icons">remove_circle</span> ${myJSON[i].key}: ${myJSON[i].values}
+            </button>
         `;
     }
     return aux;
@@ -51,7 +50,6 @@ function addDataButtons(){
     $.get("https://raw.githubusercontent.com/fakush/Random-JSON-Generator/master/js/datos-precargados.json", function(data, status){
         myData = JSON.parse(data);
         for (let i = 0; i < myData.length; i++) {
-            console.log(myData[i]);
             if(myData[i].categoriaSet == "personas"){
                 divPersona += divBoton(i);
                 $("#categoriaPersona").html(divPersona);
@@ -73,12 +71,8 @@ function addDataButtons(){
 function addArray(int){
     let sample = myData[int]; 
     let dataForArray = new ArrayDeDatos(sample.tipoSet, sample.setKey, sample.setValues);
-    // console.log(sample.tipoSet);
-    // console.log(sample.setKey);
-    // console.log(sample.setValues);
     myJSON.push(dataForArray);
     document.getElementById("arrayDataContainer").innerHTML = showDataFields();
-    index++;
     $("#generateJSON").show(); //Muestra el boton para Generar el JSON.
 }
 
@@ -86,18 +80,18 @@ function addFieldset(){
     if (document.getElementById(`inputKey`).value != "" && document.getElementById(`inputValues`).value != ""){
         let dataForArray = new ArrayDeDatos("singleData", document.getElementById(`inputKey`).value, document.getElementById(`inputValues`).value);
         myJSON.push(dataForArray);
-        document.getElementById("arrayDataContainer").innerHTML = showDataFields();
-        index++;
         $("#generateJSON").show(); //Muestra el boton para Generar el JSON.
     }
 }
 
-function removeFieldset(){ //Esto es solo para no olvidarme de implementar esta función.
-    console.log("removeFieldset");
+function removeFieldset(i){ //Esto es solo para no olvidarme de implementar esta función.
+    myJSON.splice(i, 1);
+    $("#arrayDataContainer").html(showDataFields());
 }
 
 //Creates the JSON file
-let outputArray = []; //This array will contain all the mixed data of the JSON array.
+let outputJSON = []; //This array will contain all the mixed data of the JSON array.
+let outputArray = [];
 function generateJSON(){
     if (myJSON.length > 0) {
         $("#exportJSON").show(); //Muestra el boton para Exportar el JSON.
@@ -124,7 +118,7 @@ function generateJSON(){
                     salidaArray[i+counter]= `"${valorRandom}"`;
                 } else if (myJSON[i].type == "matrizDe3") {
                     valorRandom = myJSON[i].values[Math.floor(Math.random() * myJSON[i].values.length)];
-                    // OJO AL PIOJO, CHEQUEATE ESTA MATRIZ!!!
+                    // OJO AL PIOJO, CHEQUEATE ESTA MATRIX!!!
                     salidaJson[i+counter] = `"categoria": "${valorRandom[0]}", "subCategoria": "${valorRandom[1]}", "item": "${valorRandom[2][Math.floor(Math.random() * valorRandom[2].length)]}"`;
                     salidaArray[i+counter]= `"${valorRandom[0]}", "${valorRandom[1]}", "${valorRandom[2][Math.floor(Math.random() * valorRandom[2].length)]}"`;
                 }else if (myJSON[i].type == "matrizDe2") {
@@ -138,15 +132,18 @@ function generateJSON(){
                     [${salidaArray}]
                 </div>
                 `;
-            outputArray.push(`{${salidaJson}}`);
+            outputArray.push(`{${salidaArray}}`);
+            outputJSON.push(`{${salidaJson}}`);
         }
-        document.getElementById("outputArray").innerHTML = auxOut;
-        document.getElementById("jsonData").innerHTML = `
-                                                    <div class="alert alert-danger col-12" role="alert">
-                                                            [${outputArray}]
-                                                    </div>
-                                                    `;
+        // document.getElementById("outputArrays").innerHTML = auxOut;
+        // document.getElementById("jsonData").innerHTML = `
+        //                                             <div class="alert alert-danger col-12" role="alert">
+        //                                                     [${outputJSON}]
+        //                                             </div>
+        //                                             `;
     }
+    //Ojo al piojo, dejo esta función separada porque luego de aprobar el TF quedará todo en una sola página.
+    exportJSON();
 }
 
 
@@ -154,13 +151,9 @@ function generateJSON(){
 //Borra todo
 function clearForm(){
     myJSON = [];
-    //document.getElementById("arrayRowContainer").innerHTML = newFieldset;
-    //document.getElementById("arrayDataContainer").innerHTML = "";
-    // document.getElementById("outputArray").innerHTML = "";
-    //document.getElementById("jsonData").innerHTML = "";
     $("#arrayRowContainer").html(newFieldset);
     $("#arrayDataContainer").html("");
-    $("#outputArray").html("");
+    $("#outputJSON").html("");
     $("#jsonData").html("");
     $("#generateJSON").hide();
     $("#exportJSON").hide();
@@ -168,10 +161,10 @@ function clearForm(){
 
 
 function exportJSON(){ //Pone el JSON en memoria y pasa a otra página.
-    if (outputArray.length != 0) {
-        sessionStorage.setItem('outputJSON', JSON.stringify(outputArray));
+    if (outputJSON.length != 0) {
+        sessionStorage.setItem('outputJSON', JSON.stringify(outputJSON));
+        sessionStorage.setItem('outputArray', JSON.stringify(outputArray));
         window.location.href = "resultados.html";
-        //return false;
     }
 }
 

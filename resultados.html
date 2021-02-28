@@ -22,11 +22,16 @@
         <h2>Simple tool to easy generate sample JSON files.</h2>
     </header>
     <div class="container">
-        <div class="fieldsets" style="margin-top: 10px;">
+        <div class="arraySets overflow-auto">
+            <p>Output Arrays</p>
+            <div id="showMeTheArray"></div>
+        </div>
+        <div class="arraySets overflow-auto">
+            <p>Output JSON</p>
             <div id="showMeTheJSON"></div>
         </div>
         <div class="export">
-            <button onclick="exportToJsonFile()" class="btn btn-success boton shadow-lg"><span class="material-icons">check_circle_outline</span> Export JSON</button>
+            <button onclick="exportToJsonFile()" class="btn btn-success boton shadow-lg"><span class="material-icons">check_circle_outline</span> Download JSON</button>
         </div>
     </div>
 </body>
