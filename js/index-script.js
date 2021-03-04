@@ -1,4 +1,7 @@
 //Random JSON Generator
+//TODO: Funcionalidad Copy to clipboard
+// Cambio colores
+//Añadir fechas - numero between - tabla?
 
 //Variables globales
 let newFieldset = `
