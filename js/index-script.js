@@ -82,6 +82,7 @@ function addFieldset(){
     if (document.getElementById(`inputKey`).value != "" && document.getElementById(`inputValues`).value != ""){
         let dataForArray = new ArrayDeDatos("singleData", document.getElementById(`inputKey`).value, document.getElementById(`inputValues`).value);
         myJSON.push(dataForArray);
+        document.getElementById("arrayDataContainer").innerHTML = showDataFields();
         $("#generateJSON").show(); //Muestra el boton para Generar el JSON.
     }
 }
