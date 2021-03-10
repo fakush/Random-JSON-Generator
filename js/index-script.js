@@ -1,7 +1,5 @@
 //Random JSON Generator
-//TODO: Funcionalidad Copy to clipboard
-// Cambio colores
-//Añadir fechas - numero between - tabla?
+//Más adelante: Añadir fechas - numero between - tabla?
 
 //Variables globales
 let newFieldset = `
@@ -129,6 +127,19 @@ function generateJSON(){
                     valorRandom = myJSON[i].values[Math.floor(Math.random() * myJSON[i].values.length)];
                     salidaJson[i+counter] = `"provincia": "${valorRandom[0]}", "capital": "${valorRandom[1]}"`;
                     salidaArray[i+counter]= `"${valorRandom[0]}", "${valorRandom[1]}"`;
+                }else if (myJSON[i].type == "fechas") {
+                    function randomDate(start, end) {
+                        var d = new Date(start.getTime() + Math.random() * (end.getTime() -                     start.getTime())),
+                            month = '' + (d.getMonth() + 1),
+                            day = '' + d.getDate(),
+                            year = d.getFullYear();
+                        if (month.length < 2) month = '0' + month;
+                        if (day.length < 2) day = '0' + day;
+                        return [day, month, year].join('-');
+                    }
+                    let valorRandom = randomDate(new Date(1950, 0, 1), new Date());
+                    salidaJson[i+counter] = ` "${myJSON[i].key}": "${valorRandom}"`;
+                    salidaArray[i+counter]= `"${valorRandom}"`;
                 }
             }
             auxOut+=`
