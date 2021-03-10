@@ -161,6 +161,13 @@
         "setValues": "A' , 'B' , 'C' , 'D' , 'E' , 'F' , 'G' , 'H' , 'I' , 'J' , 'K' , 'L' , 'M' , 'N' , 'O' , 'P' , 'Q' , 'R' , 'S' , 'T' , 'U' , 'V' , 'W' , 'X' , 'Y' , 'Z"
     },
     {
+        "tituloSet": "Fechas Aleatorias",
+        "categoriaSet": "datos",
+        "tipoSet": "fechas",
+        "setKey": "fechas",
+        "setValues": "Fechas Random"
+    },
+    {
         "tituloSet": "Números 1..30",
         "categoriaSet": "datos",
         "tipoSet": "singleData",
