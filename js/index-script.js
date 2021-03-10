@@ -31,9 +31,10 @@ function showDataFields() {
         // let valuesString = JSON.stringify(myJSON[i].values);
         // let newString = valuesString.replace(",", ", ");
         aux+=`
-            <button onclick="removeFieldset(${i})" class="alert alert-danger shadow" style="display:inline-block;" role="alert">
-            <span class="material-icons">remove_circle</span> ${myJSON[i].key}: ${myJSON[i].values}
-            </button>
+            <div class="alert alert-secondary fade show shadow" role="alert">
+                <button class="close" onclick="removeFieldset(${i})"><span class="material-icons">remove_circle_outline</span></button>    
+                ${myJSON[i].key}: ${myJSON[i].values}
+            </div>
         `;
     }
     return aux;
@@ -46,7 +47,7 @@ let divLugares = ``;
 let divDatos = ``;
 
 function divBoton(index){
-    return `<button onclick="addArray(${index})" class="btn btn-warning shadow boton"><span class="material-icons">add_circle_outline</span> ${myData[index].tituloSet}</button>`;
+    return `<button onclick="addArray(${index})" class="btn btn-dark shadow boton"><span class="material-icons">add_circle_outline</span> ${myData[index].tituloSet}</button>`;
 }
 
 function addDataButtons(){

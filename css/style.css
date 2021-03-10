@@ -8,14 +8,14 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 62.5%;
   margin: 0px;
-  background-color: #5263a8;
+  background-color: #8b8b8b;
   color: whitesmoke;
 }
 
 header {
   padding: 25px;
   padding-left: 10vw;
-  background-color: #751515;
+  background-color: #464545;
 }
 
 .instructions {
@@ -162,6 +162,11 @@ header {
 .arraySets #arrayDataContainer {
   width: 100%;
   padding: 15px;
+  overflow-wrap: break-word;
+}
+
+.arraySets #arrayDataContainer p {
+  overflow: hidden;
 }
 
 .export {
@@ -188,5 +193,23 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.export a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 720px) {
+  .fieldsets .samples .boton {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

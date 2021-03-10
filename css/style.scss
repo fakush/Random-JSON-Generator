@@ -9,14 +9,14 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
     margin: 0px;
-    background-color: #5263a8;
+    background-color: #8b8b8b;
     color: whitesmoke;
 }
 
 header{
     padding: 25px;
     padding-left: 10vw;
-    background-color: rgb(117, 21, 21);
+    background-color: rgb(70, 69, 69);
 }
 
 .instructions{
@@ -121,6 +121,10 @@ header{
     #arrayDataContainer{
         width: 100%;
         padding: 15px;
+        overflow-wrap: break-word;
+        p{
+            overflow: hidden;
+        }
         .alert{
             // margin: 2px ;
         }
@@ -140,6 +144,11 @@ header{
         justify-content: center;
         align-items: center;
     }
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
@@ -150,4 +159,12 @@ header{
 // }
 
 
-
+@media (max-width: 720px) {
+    .fieldsets{
+        .samples{
+            .boton{
+                width: 100%;
+            }
+        }
+    }
+}
