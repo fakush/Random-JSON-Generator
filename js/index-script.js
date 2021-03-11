@@ -80,7 +80,7 @@ function addArray(int){
 
 function addFieldset(){
     if (document.getElementById(`inputKey`).value != "" && document.getElementById(`inputValues`).value != ""){
-        let dataForArray = new ArrayDeDatos("singleData", document.getElementById(`inputKey`).value, document.getElementById(`inputValues`).value);
+        let dataForArray = new ArrayDeDatos("manualData", document.getElementById(`inputKey`).value, document.getElementById(`inputValues`).value);
         myJSON.push(dataForArray);
         document.getElementById("arrayDataContainer").innerHTML = showDataFields();
         $("#generateJSON").show(); //Muestra el boton para Generar el JSON.
@@ -113,6 +113,12 @@ function generateJSON(){
                 if (myJSON[i].type == "singleData"){
                     let valoresToArray = myJSON[i].values.split("' , '");
                     let valorRandom = valoresToArray[Math.floor(Math.random() * valoresToArray.length)];
+                    salidaJson[i+counter] = ` "${myJSON[i].key}": "${valorRandom}"`;
+                    salidaArray[i+counter]= `"${valorRandom}"`;
+                } else if (myJSON[i].type == "manualData"){
+                    let valoresToArray = myJSON[i].values.split(",");
+                    let valorRandom = valoresToArray[Math.floor(Math.random() * valoresToArray.length)];
+                    valorRandom = $.trim(valorRandom); //Quitamos espacios antes y despues del valor.
                     salidaJson[i+counter] = ` "${myJSON[i].key}": "${valorRandom}"`;
                     salidaArray[i+counter]= `"${valorRandom}"`;
                 } else if (myJSON[i].type == "numero") {
